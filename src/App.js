@@ -1,12 +1,10 @@
 import "./App.css";
 import CreateTaskComponent from "./components/CreateTaskComponent";
 import TaskComponent from "./components/TaskComponent";
-import { useSelector, useDispatch } from "react-redux";
-import removeTask from "./actions/remove-task";
+import { useSelector} from "react-redux";
 
 function App() {
   const tasks = useSelector((state) => state);
-  const dispatch = useDispatch();
   return (
     <div className="App container">
       <h1>TODO App</h1>
@@ -15,8 +13,8 @@ function App() {
         {tasks.map((tsk, ind) => (
           <TaskComponent
             task={tsk}
+            index={ind}
             key={ind}
-            removeTask={() => dispatch(removeTask(ind))}
           />
         ))}
       </div>
