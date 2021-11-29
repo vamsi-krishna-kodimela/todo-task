@@ -1,10 +1,14 @@
 import React from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import addTask from "../actions/add-task";
+
 const CreateTaskComponent = (props) => {
+  const dispatch = useDispatch();
   const [task, setTask] = useState("");
-  const addTask = () => {
+  const submit = () => {
     setTask("");
-    props.addTask(task);
+    dispatch(addTask(task));
   };
 
   return (
@@ -15,7 +19,7 @@ const CreateTaskComponent = (props) => {
         onChange={(event) => setTask(event.target.value)}
         placeholder="Task"
       />
-      <button className="btn task-btn flex-auto" onClick={addTask}>
+      <button className="btn task-btn flex-auto" onClick={submit}>
         Add Task
       </button>
     </div>
