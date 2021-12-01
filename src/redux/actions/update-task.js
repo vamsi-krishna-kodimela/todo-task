@@ -1,6 +1,9 @@
+import TasksConstants from "../constants/tasks-constants";
+
+
 const updateTask = (task, index) => {
   return {
-    type: "UPDATE_TASK",
+    type: TasksConstants.UPDATE_TASK,
     index: index,
     task: task,
   };

@@ -1,13 +1,15 @@
-const tasks = (state = [], action) => {
+import TasksConstants from "../constants/tasks-constants";
+
+const tasksReducer = (state = [], action) => {
   switch (action.type) {
-    case "ADD_TASK":
+    case TasksConstants.ADD_TASK:
       return [action.task, ...state];
-    case "REMOVE_TASK":
+    case TasksConstants.REMOVE_TASK:
       return [
         ...state.slice(0, action.index),
         ...state.slice(action.index + 1),
       ];
-    case "UPDATE_TASK":
+    case TasksConstants.UPDATE_TASK:
       return [
         ...state.slice(0, action.index),
         action.task,
@@ -18,4 +20,4 @@ const tasks = (state = [], action) => {
   }
 };
 
-export default tasks;
+export default tasksReducer;

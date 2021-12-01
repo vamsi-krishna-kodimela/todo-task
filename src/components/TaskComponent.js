@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import updateTask from "../actions/update-task";
-import removeTask from "../actions/remove-task";
+import updateTask from "../redux/actions/update-task";
+import removeTask from "../redux/actions/remove-task";
 
 const TaskComponent = (props) => {
-  const [task, setTask] = useState(...props.task);
+  const [task, setTask] = useState(props.task);
   const [editMode, setEditMode] = useState(false);
   const index = props.index;
   const dispatch = useDispatch();

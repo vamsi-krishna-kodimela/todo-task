@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import addTask from "../actions/add-task";
+import addTask from "../redux/actions/add-task";
 
 const CreateTaskComponent = (props) => {
   const dispatch = useDispatch();

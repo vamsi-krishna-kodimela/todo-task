@@ -1,9 +1,9 @@
 import { createStore } from "redux";
-import tasks from "../reducers/tasks-reducer";
+import tasksReducer from "./reducers/tasks-reducer";
 
 //STORE
 const store = createStore(
-  tasks,
+  tasksReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 export default store;
